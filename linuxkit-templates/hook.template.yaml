@@ -289,10 +289,6 @@ files:
     source: "files/dhcpcd.conf"
     mode: "0644"
 
-  - path: etc/dhcpcd-reject.sh
-    source: "files/dhcpcd-reject.sh"
-    mode: "0777"
-
   - path: etc/securetty
     contents: |
       console

@@ -1,3 +1,6 @@
+# Customization
+- This link https://man.netbsd.org/NetBSD-6.1/dhcpcd.conf.5 explains about whitelist and blacklist configuration 
+
 # Hook
 
 Hook is the Tinkerbell Installation Environment for bare-metal.
