@@ -1,0 +1,14 @@
+#!ipxe
+
+echo Loading the Tinkerbell Hook iPXE script...
+
+set arch x86_64
+set download-url http://10.20.22.191/hook
+
+kernel ${download-url}/vmlinuz-${arch} tink_worker_image=public.ecr.aws/eks-anywhere/tinkerbell/tink/tink-worker:v0.10.1-eks-a-88 \
+facility= syslog_host=10.20.22.121 grpc_authority=10.20.22.121:42113 tinkerbell_tls=false worker_id=6c:92:cf:75:4e:70 hw_addr=6c:92:cf:75:4e:70 \
+modules=loop,squashfs,sd-mod,usb-storage intel_iommu=on iommu=pt initrd=initramfs-${arch} console=tty0 console=ttyS1,115200
+
+initrd ${download-url}/initramfs-${arch}
+
+boot
